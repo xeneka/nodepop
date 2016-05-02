@@ -1,0 +1,35 @@
+{
+  "name": "nodepop",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "body-parser": "~1.13.2",
+    "cookie-parser": "~1.3.5",
+    "debug": "~2.2.0",
+    "ejs": "~2.3.3",
+    "express": "~4.13.1",
+    "mongoose": "^4.4.14",
+    "morgan": "~1.6.1",
+    "serve-favicon": "~2.3.0"
+  },
+  "description": "Practica Node keepcoding",
+  "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xeneka/nodepop.git"
+  },
+  "keywords": [
+    "mongodb",
+    "express",
+    "jwt"
+  ],
+  "author": "Antonio Benavente",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xeneka/nodepop/issues"
+  },
+  "homepage": "https://github.com/xeneka/nodepop"
+}
