@@ -10,6 +10,10 @@ var users = require('./routes/users');
 
 var app = express();
 
+//  Base de datos
+require('./lib/connectMongoose');
+require('./models/Usuario');
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -24,6 +28,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 app.use('/users', users);
+
+//app.use('/api/v1/usuarios',require('./routes/api/v1/usuarios'));
+app.use('/api/v1/register',require('./routes/api/v1/register'));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
