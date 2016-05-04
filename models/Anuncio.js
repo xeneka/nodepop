@@ -90,12 +90,39 @@ Función listado de los anuncios
 
 AnuncioSchema.statics.list = function(filter, start, limit,sort,callback){
 
-    var query =  Anuncio.find(filter);
+    let query =  Anuncio.find(filter);
     console.log(filter);
     query.skip(start);
     query.limit(limit);
     query.sort(sort);
     return query.exec(callback);
+}
+
+AnuncioSchema.statics.listTag = function(callback){
+
+    return new Promise(function (resolve, reject){
+
+
+    let query = Anuncio.find().distinct('tags',function(err, results){
+
+        if(err){
+            if(callback){
+                callback(err);
+                return;
+            }
+            reject(err);
+        }
+        if(callback){
+            callback(null, results);
+            return;
+        }
+
+        resolve(results);
+
+    });
+
+    });
+
 }
 
 

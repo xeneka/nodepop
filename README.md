@@ -57,7 +57,13 @@ Si un parametro no se pone todos los elementos cumplen la condición.
 
 ---
 
+## Lista de tags
 
+#### Esta función de la api se utiliza para saber las todas las tags del sistema de cada uno de los anuncios
+
+**Url de uso** http://servidor/api/v1/anuncios/tag?token=token devuelto por la autenticación
+
+--
 
 
 

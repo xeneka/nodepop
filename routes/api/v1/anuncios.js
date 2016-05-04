@@ -64,7 +64,7 @@ router.get('/', function(req, res, next){
      */
 
     if (typeof precio !== "undefined" ){
-       
+
 ;        let rangeprecio = precio.split("-");
         console.log(rangeprecio);
         console.log(rangeprecio.length);
@@ -105,6 +105,18 @@ router.get('/', function(req, res, next){
 
 
 
+
+});
+
+
+router.get('/tag', function(req, res, next){
+   Anuncio.listTag(function(err, rows){
+       if (err){
+           return res.json({success:false , err:err});
+       }
+
+       res.json({success:true, rows:rows});
+   })
 
 });
 
