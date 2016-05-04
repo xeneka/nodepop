@@ -50,7 +50,24 @@ Si un parametro no se pone todos los elementos cumplen la condición.
 *GET http://localhost:3000/apiv1/anuncios? tag =mobile& venta =false& no mbre =ip& precio =50­& start =0& limit =2& sort =precio& token =eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJfaWQiOiI1NWZk OWFiZGE4Y2QxZDlhMjQwYzgyMzEiLCJub21icmUiOiJhZG1pbiIsImVtYWlsIj oiamFtZzQ0QGdtYWlsLmNvbSIsImNsYXZlIjoiMTIzIiwiX192IjowfQ.y8wPJ hNaS8Vf51ZlX9qZBlrTLGGy4JzDgN2eGSHeQfg*
 
 
+---
 
+###Lista de tags
 
+####Esta función de la api se utiliza para saber las todas las tags del sistema de cada uno de los anuncios
 
+**Url de uso** http://servidor/api/v1/anuncios/tag?token=token devuelto por la autenticación
 
+---
+
+### Guardar Token
+
+#### Esta función guarda el token
+
+**Url uso** http://servidor/api/v1/token/plataforma/token/usuario
+
+#### Descripcion Parametros
+
++ plataforma ios o android
++ token token que queramos guardar
++ usuario usuario
