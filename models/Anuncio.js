@@ -17,10 +17,11 @@ let AnuncioSchema = mongoose.Schema({
     
 });
 
-/*
-Esta función no esta pedida inicialmente, pero como podra utilizarse en un futuro la hago para la carga inicial
- */
 
+/*
+Guarda un anuncio, se le pasa un json cn los datos del anuncio nombre, venta, precio y nombre de la foto
+Se puede utilizar tanto como promesa como callback
+ */
 
 
 AnuncioSchema.statics.saveAnuncio = function(data, callback){
@@ -62,10 +63,14 @@ AnuncioSchema.statics.saveAnuncio = function(data, callback){
 }
 
 
+/*
+Función que borra todos los ancuncios
+ */
+
 AnuncioSchema.statics.zapAll = function(){
 
     Anuncio.remove({},function(err, removed){
-        console.log("Entro....",err);
+      
 
         if(err){
             console.log(err);
@@ -78,5 +83,21 @@ AnuncioSchema.statics.zapAll = function(){
 
     
 }
+
+/* 
+Función listado de los anuncios
+*/
+
+AnuncioSchema.statics.list = function(filter, start, limit,sort,callback){
+
+    var query =  Anuncio.find(filter);
+    console.log(filter);
+    query.skip(start);
+    query.limit(limit);
+    query.sort(sort);
+    return query.exec(callback);
+}
+
+
 
 let Anuncio = mongoose.model('Anuncio',AnuncioSchema);
