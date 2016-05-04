@@ -13,7 +13,7 @@ El usuario debe autenticarse para obtener los anuncios
 ###Para registrar los usuarios podemos utilizar los siguientes método:
 
 1. **Usando el path:** http://servidor/api/v1/usuarios/register/USUARIO/EMAIL/PASSWORD
-2. **Usando query string:** http://servidor/api/v1/usuarios/register?name=prueba&mail=antonio@benavente.es&pass=pass
+2. **Usando query string:** http://servidor/api/v1/usuarios/register?name=prueba&mail=theemail&pass=pass
 3. **Usando el body:** pasando los parametros name, mail, pass
 
 Todos los parámetros son **obligatorios**.
