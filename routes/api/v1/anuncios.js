@@ -9,6 +9,13 @@ let router = express.Router();
 let mongoose =require('mongoose');
 let Anuncio = mongoose.model('Anuncio');
 
+
+var jwtAuth = require('../../../lib/jwtAuth');
+
+
+router.use(jwtAuth());
+
+
 router.get('/', function(req, res, next){
 
     let name =req.query.name;
@@ -18,6 +25,8 @@ router.get('/', function(req, res, next){
     let start = parseInt(req.query.start) || 0;
     let limit = parseInt(req.query.limit) || null;
     let sort = req.query.sort || null;
+
+    console.log(req.query);
 
 
     var criteria ={};
@@ -54,9 +63,9 @@ router.get('/', function(req, res, next){
     sólo valor a uno de ello por eso verificaremos cuantos valores estan definidos y así configurar el criterio de selección
      */
 
-    if (precio !== "undefined" ){
-
-        let rangeprecio = precio.split("-");
+    if (typeof precio !== "undefined" ){
+       
+;        let rangeprecio = precio.split("-");
         console.log(rangeprecio);
         console.log(rangeprecio.length);
 

@@ -30,6 +30,8 @@ let userSchema = mongoose.Schema({
 });
 
 
+
+
 /* Función para insertar un nuevo usuario en la base de datos
 Debe comprobar si existe y si no existe darlo de alta y si existe dar el error
 
@@ -71,6 +73,7 @@ return new Promise(function(resolve,reject){
 }
 
 let User = mongoose.model('User',userSchema);
+
 
 
 

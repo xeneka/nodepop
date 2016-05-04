@@ -31,7 +31,7 @@ app.use('/', routes);
 app.use('/users', users);
 
 
-app.use('/api/v1/register',require('./routes/api/v1/register'));
+app.use('/api/v1/usuarios',require('./routes/api/v1/usuarios'));
 app.use('/api/v1/anuncios',require('./routes/api/v1/anuncios'));
 
 // catch 404 and forward to error handler

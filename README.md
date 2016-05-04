@@ -2,12 +2,18 @@
 
 ***
 
+**Descripción del API**, es un api desarrollada en Nodejs + Express + MongoDB.
+Gestiona la inclusión de anuncios mediante una carga masiva y el usuario de la api puede
+realizar consultas a la api para obtener los anuncios por distintas claves nombre,precio,tag.
+El usuario debe autenticarse para obtener los anuncios
+
+***
 ## Registro de Usuarios
 
 ###Para registrar los usuarios podemos utilizar los siguientes método:
 
-1. **Usando el path:** http://servidor/api/v1/register/USUARIO/EMAIL/PASSWORD
-2. **Usando query string:** http://servidor/api/v1/register?name=prueba&mail=antonio@benavente.es&pass=pass
+1. **Usando el path:** http://servidor/api/v1/usuarios/register/USUARIO/EMAIL/PASSWORD
+2. **Usando query string:** http://servidor/api/v1/usuarios/register?name=prueba&mail=antonio@benavente.es&pass=pass
 3. **Usando el body:** pasando los parametros name, mail, pass
 
 Todos los parámetros son **obligatorios**.
@@ -49,6 +55,7 @@ Si un parametro no se pone todos los elementos cumplen la condición.
 
 *GET http://localhost:3000/apiv1/anuncios? tag =mobile& venta =false& no mbre =ip& precio =50­& start =0& limit =2& sort =precio& token =eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJfaWQiOiI1NWZk OWFiZGE4Y2QxZDlhMjQwYzgyMzEiLCJub21icmUiOiJhZG1pbiIsImVtYWlsIj oiamFtZzQ0QGdtYWlsLmNvbSIsImNsYXZlIjoiMTIzIiwiX192IjowfQ.y8wPJ hNaS8Vf51ZlX9qZBlrTLGGy4JzDgN2eGSHeQfg*
 
+---
 
 
 
