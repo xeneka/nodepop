@@ -23,7 +23,7 @@ var jwt = require('jsonwebtoken');
 var config = require('../../../local_config');
 
 
-router.post('/register/:name/:mail/:pass', function(req, res, next){
+router.post('/register/:name/:mail/:pass', function(req, res){
 
     /*
     Uso la función de guardar usuario como una promesa
@@ -38,7 +38,7 @@ router.post('/register/:name/:mail/:pass', function(req, res, next){
 
 });
 
-router.post('/register', function(req,res,next){
+router.post('/register', function(req,res){
     let user = req.query.name || req.body.name;
     let email = req.query.mail || req.body.mail;
     let pass = req.query.pass || req.body.pass;
@@ -58,12 +58,12 @@ router.post('/register', function(req,res,next){
         return;
 
 
-    })
+    });
 
 
 });
 
-router.post('/authenticate/:en?/:es?', function(req, res, next) {
+router.post('/authenticate/:en?/:es?', function(req, res) {
 
     let user = req.body.user;
     let pass = req.body.pass;
@@ -82,12 +82,13 @@ console.log(language);
 
         if (user.pass !== pass) {
             return res.status(401).json({success: false, error: erroresIdioma[language]['PASS_INCORRECT']});
+
         }
 
         // Creamos el token por que el usuario ya es correcto
 
        
-        var token = jwt.sign({id: user._id}, config.jwt.secret, {expiresIn: "2 days"});
+        var token = jwt.sign({id: user._id}, config.jwt.secret, {expiresIn: '2 days'});
 
         res.json({sucess: true, token: token});
 

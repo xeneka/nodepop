@@ -46,7 +46,7 @@ pushTokenSchema.statics.saveToken = function(data, callback){
 
 
     });
-}
+};
 
 let token = mongoose.model('Token',pushTokenSchema);
 

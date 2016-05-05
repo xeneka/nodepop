@@ -70,7 +70,7 @@ return new Promise(function(resolve,reject){
 
 
     });
-}
+};
 
 let User = mongoose.model('User',userSchema);
 

@@ -8,7 +8,7 @@ let router = express.Router();
 let mongoose =require('mongoose');
 let Token = mongoose.model('Token');
 
-router.post('/:plataforma/:token/:usuario', function(req, res, next){
+router.post('/:plataforma/:token/:usuario', function(req, res){
 
     
 

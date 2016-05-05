@@ -41,7 +41,7 @@ AnuncioSchema.statics.saveAnuncio = function(data, callback){
 
                 if (callback){
                     callback(err);
-                    return
+                    return;
 
                 }
 
@@ -57,11 +57,11 @@ AnuncioSchema.statics.saveAnuncio = function(data, callback){
 
             resolve(anuncio._id);
             return;
-        })
+        });
 
     });
 
-}
+};
 
 
 /*
@@ -83,7 +83,7 @@ AnuncioSchema.statics.zapAll = function(){
     });
 
     
-}
+};
 
 /* 
 Función listado de los anuncios
@@ -97,7 +97,7 @@ AnuncioSchema.statics.list = function(filter, start, limit,sort,callback){
     query.limit(limit);
     query.sort(sort);
     return query.exec(callback);
-}
+};
 
 AnuncioSchema.statics.listTag = function(callback){
 
@@ -124,7 +124,7 @@ AnuncioSchema.statics.listTag = function(callback){
 
     });
 
-}
+};
 
 
 
