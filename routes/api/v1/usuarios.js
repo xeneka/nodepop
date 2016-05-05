@@ -10,6 +10,15 @@ let router = express.Router();
 let mongoose =require('mongoose');
 let User = mongoose.model('User');
 
+
+let errores = require('../../../models/Error');
+let erroresIdioma=[];
+erroresIdioma['es'] = errores.errorSkin('es');
+erroresIdioma['en'] = errores.errorSkin('en');
+
+
+
+
 var jwt = require('jsonwebtoken');
 var config = require('../../../local_config');
 
@@ -54,11 +63,13 @@ router.post('/register', function(req,res,next){
 
 });
 
-router.post('/authenticate', function(req, res, next) {
+router.post('/authenticate/:en?/:es?', function(req, res, next) {
 
-    var user = req.body.user;
-    var pass = req.body.pass;
+    let user = req.body.user;
+    let pass = req.body.pass;
+    let language = req.params.en || 'es';
 
+console.log(language);
     User.findOne({name: user}).exec(function (err, user) {
 
         if (err) {
@@ -66,11 +77,11 @@ router.post('/authenticate', function(req, res, next) {
         }
 
         if (!user) {
-            return res.status(401).json({success: false, error: "Auth failed. User not found"});
+            return res.status(401).json({success: false, error: erroresIdioma[language]['USER_NOT_FOUND']});
         }
 
         if (user.pass !== pass) {
-            return res.status(401).json({success: false, error: "Auth failed. Invalid password"});
+            return res.status(401).json({success: false, error: erroresIdioma[language]['PASS_INCORRECT']});
         }
 
         // Creamos el token por que el usuario ya es correcto

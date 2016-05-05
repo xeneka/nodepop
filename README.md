@@ -101,3 +101,29 @@ Si el artículo o artículos existen delvorá un json como este. Para descargar 
 + plataforma ios o android
 + token token que queramos guardar
 + usuario usuario
+
+---
+
+### Autenticación
+
+La autenticación devuelve un token que debe ser devuelto por cada pregunta que se haga a la API.
+
+La **url de uso** http://servidor/api/v1/usuarios/authenticate deben pasarse como parámetros como post. Los
+parametros son los siguientes:
+
++ user
++ pass
+
+devolverá lo siguiente
+```
+{
+  "sucess": true,
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjU3Mjg3ZGFlYmU5OGQxNDMwYWQ0MDFhYSIsImlhdCI6MTQ2MjQ3ODI0MCwiZXhwIjoxNDYyNjUxMDQwfQ.uEv5ZZ6VBCl7zR3dYwTPsReE0TsjfO0-KeSzKCOxkj0"
+}
+```
+**Existen la posibilidad de obtener la respuesta en español o ingles** para ello
+bastará con añadir el parametro /es o /en
+
+
+###Nota del desarrollador
+La mayoría de las aplicaciones se realizan tanto como promesas como callback
