@@ -33,6 +33,7 @@ AnuncioSchema.statics.saveAnuncio = function(data, callback){
         anuncio.venta=data.venta;
         anuncio.precio = data.precio;
         anuncio.foto=data.foto;
+        anuncio.tags=data.tags;
 
         anuncio.save(function (err, user_Saved) {
 

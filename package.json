@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "start": "nodemon ./bin/www",
-    "inst": "nodemon install_db.js"
+    "start": "DEBUG=generated:* PORT=3002 nodemon ./bin/www",
+    "run": "nodemon install_db.js"
   },
   "dependencies": {
     "body-parser": "~1.13.2",
