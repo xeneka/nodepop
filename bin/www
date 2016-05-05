@@ -3,7 +3,7 @@
 /**
  * Module dependencies.
  */
-
+'use strict';
 var app = require('../app');
 var debug = require('debug')('nodepop:server');
 var http = require('http');
@@ -15,19 +15,52 @@ var http = require('http');
 var port = normalizePort(process.env.PORT || '3000');
 app.set('port', port);
 
-/**
- * Create HTTP server.
- */
+// Arranco el cluster
 
-var server = http.createServer(app);
+var cluster = require('cluster');
+let worker =[];
 
-/**
- * Listen on provided port, on all network interfaces.
- */
+if (cluster.isMaster){
+  // Soy el master
 
-server.listen(port);
-server.on('error', onError);
-server.on('listening', onListening);
+  let numcpus= require('os').cpus().length;
+  console.log(`Hay ${numcpus} cpus` );
+
+  for(var i=0 ; i< numcpus; i++){
+    worker.push(cluster.fork());
+  }
+
+  // Le vantamos un cluster si se cae alguno
+  cluster.on('exit', function(worker, code, signal) { console.log('Worker ' + worker.process.pid +
+      ' died with code: ' + code +
+      ', and signal: ' + signal);
+    cluster.fork();
+  });
+
+  // Escuchamos los mensaje de los worker
+  cluster.on('message', function(message) { console.log(message);
+  });
+
+}else {
+
+
+  /**
+   * Create HTTP server.
+   */
+
+  var server = http.createServer(app);
+
+  /**
+   * Listen on provided port, on all network interfaces.
+   */
+
+  process.send('Arrancado el worker con el número de proceso id: ' + process.pid);
+  server.listen(port);
+  server.on('error', onError);
+  server.on('listening', onListening);
+
+}
+// finaliza el cluster
 
 /**
  * Normalize a port into a number, string, or false.
