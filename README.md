@@ -5,6 +5,8 @@
 
 1.- Servir ficheros estáticos -> http://ipadpro.es/images/anuncios/bici.jpg
 
+2.- Contenido a traves de IP -> 52.202.226.96
+
 ***
 
 **Descripción del API**, es un api desarrollada en Nodejs + Express + MongoDB.
