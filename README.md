@@ -62,7 +62,7 @@ Si un parametro no se pone todos los elementos cumplen la condición.
 
 #####Ejemplo
 
-*GET http://localhost:3000/apiv1/anuncios? tag =mobile& venta =false& no mbre =ip& precio =50­& start =0& limit =2& sort =precio& token =eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJfaWQiOiI1NWZk OWFiZGE4Y2QxZDlhMjQwYzgyMzEiLCJub21icmUiOiJhZG1pbiIsImVtYWlsIj oiamFtZzQ0QGdtYWlsLmNvbSIsImNsYXZlIjoiMTIzIiwiX192IjowfQ.y8wPJ hNaS8Vf51ZlX9qZBlrTLGGy4JzDgN2eGSHeQfg*
+*GET http://localhost:3000/api/v1/anuncios?tag=mobile&venta=false&nombre=ip&precio=50&start=0&limit=2&sort=precio&token =eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJfaWQiOiI1NWZk OWFiZGE4Y2QxZDlhMjQwYzgyMzEiLCJub21icmUiOiJhZG1pbiIsImVtYWlsIj oiamFtZzQ0QGdtYWlsLmNvbSIsImNsYXZlIjoiMTIzIiwiX192IjowfQ.y8wPJ hNaS8Vf51ZlX9qZBlrTLGGy4JzDgN2eGSHeQfg*
 
 Si el artículo o artículos existen delvorá un json como este. Para descargar la image hay que hacerlo en http://servidor/images/auncios/nombredelaimagen
 
