@@ -1,10 +1,11 @@
 # nodepop Practica Node keepcoding
 
 ***
-**Funcionamiento de la Práctica **
+**Funcionamiento de la Práctica**
 
-1.- Funcionamiento con node
+**1.- Funcionamiento con node - Pruebas montadas sobre el dominio ipadpro.es**
 + Servir ficheros estáticos -> http://ipadpro.es/images/anuncios/bici.jpg
++ Registar usuario -> http://ipadpro.es/api/v1/usuarios/register/devops/info@devops.com/devops
 
 2.- Contenido a traves de IP -> http://52.202.226.96
 
