@@ -4,7 +4,7 @@
 **Funcionamiento de la Práctica **
 
 1.- Funcionamiento con node
-+Servir ficheros estáticos -> http://ipadpro.es/images/anuncios/bici.jpg
++ Servir ficheros estáticos -> http://ipadpro.es/images/anuncios/bici.jpg
 
 2.- Contenido a traves de IP -> http://52.202.226.96
 
