@@ -5,7 +5,7 @@
 
 1.- Servir ficheros estáticos -> http://ipadpro.es/images/anuncios/bici.jpg
 
-2.- Contenido a traves de IP -> 52.202.226.96
+2.- Contenido a traves de IP -> http://52.202.226.96
 
 ***
 
