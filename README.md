@@ -1,6 +1,11 @@
 # nodepop Practica Node keepcoding
 
 ***
+**Funcionamiento de la Práctica **
+
+1.- Servir ficheros estáticos -> http://ipadpro.es/images/anuncios/bici.jpg
+
+***
 
 **Descripción del API**, es un api desarrollada en Nodejs + Express + MongoDB.
 Gestiona la inclusión de anuncios mediante una carga masiva y el usuario de la api puede
