@@ -7,7 +7,7 @@
 + Servir ficheros estáticos -> http://ipadpro.es/images/anuncios/bici.jpg
 + Registar usuario -> http://ipadpro.es/api/v1/usuarios/register/devops/info@devops.com/devops
 
-2.- Contenido a traves de IP -> http://52.202.226.96
+2.- Contenido a traves de IP -> http://52.202.226.96 o através del dominio http://fullstackdeveloper.com.es
 
 ***
 
